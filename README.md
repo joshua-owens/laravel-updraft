@@ -1,6 +1,9 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-jetstream.svg"></p>
 
 <p align="center">
+    <a href="https://www.repostatus.org/#wip">
+        <img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public." />
+    </a>
     <a href="https://github.com/laravel/jetstream/actions">
         <img src="https://github.com/laravel/jetstream/workflows/tests/badge.svg" alt="Build Status">
     </a>
