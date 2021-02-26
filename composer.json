@@ -1,5 +1,5 @@
 {
-    "name": "jowens/laravel-updraft",
+    "name": "laravel-updraft/laravel-updraft",
     "description": "Tailwind scaffolding for the Laravel framework with React.",
     "keywords": ["laravel", "tailwind", "auth", "react"],
     "license": "MIT",
