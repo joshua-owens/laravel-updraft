@@ -1,11 +1,11 @@
 {
-    "name": "laravel-updraft/laravel-updraft",
+    "name": "laravel-upstream/laravel-upstream",
     "description": "Tailwind scaffolding for the Laravel framework with React.",
     "keywords": ["laravel", "tailwind", "auth", "react"],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/joshua-owens/laravel-updraft/issues",
-        "source": "https://github.com/joshua-owens/laravel-updraft"
+        "issues": "https://github.com/joshua-owens/laravel-upstream/issues",
+        "source": "https://github.com/joshua-owens/laravel-upstream"
     },
     "authors": [
         {
