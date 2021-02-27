@@ -106,17 +106,16 @@ class InstallCommand extends Command
         // Install NPM packages...
         $this->updateNodePackages(function ($packages) {
             return [
-                '@inertiajs/inertia' => '^0.8.4',
-                '@inertiajs/inertia-vue3' => '^0.3.5',
+                '@inertiajs/inertia' => '^0.8.5',
+                '@inertiajs/inertia-react' => '^0.5.4',
                 '@inertiajs/progress' => '^0.2.4',
                 '@tailwindcss/forms' => '^0.2.1',
                 '@tailwindcss/typography' => '^0.3.0',
                 'postcss-import' => '^12.0.1',
                 'tailwindcss' => '^2.0.1',
                 'autoprefixer' => '^10.0.2',
-                'vue' => '^3.0.5',
-                '@vue/compiler-sfc' => '^3.0.5',
-                'vue-loader' => '^16.1.2',
+                'react' => '^17.0.1',
+                'react-dom' => '^17.0.1',
             ] + $packages;
         });
 
@@ -182,10 +181,10 @@ class InstallCommand extends Command
         }
 
         // Inertia Pages...
-        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/Dashboard.vue', resource_path('js/Pages/Dashboard.vue'));
-        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/PrivacyPolicy.vue', resource_path('js/Pages/PrivacyPolicy.vue'));
-        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/TermsOfService.vue', resource_path('js/Pages/TermsOfService.vue'));
-        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/Welcome.vue', resource_path('js/Pages/Welcome.vue'));
+//        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/Dashboard.vue', resource_path('js/Pages/Dashboard.vue'));
+//        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/PrivacyPolicy.vue', resource_path('js/Pages/PrivacyPolicy.vue'));
+//        copy(__DIR__.'/../../stubs/inertia/resources/js/Pages/TermsOfService.vue', resource_path('js/Pages/TermsOfService.vue'));
+        copy(__DIR__ . '/../../stubs/inertia/resources/js/Pages/Welcome.jsx', resource_path('js/Pages/Welcome.jsx'));
 
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia/resources/js/Jetstream', resource_path('js/Jetstream'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia/resources/js/Layouts', resource_path('js/Layouts'));
