@@ -15,7 +15,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'upstream:install {stack : The development stack that should be installed}
+    protected $signature = 'updraft:install {stack : The development stack that should be installed}
                                               {--teams : Indicates if team support should be installed}
                                               {--composer=global : Absolute path to the Composer binary which should be used to install packages}';
 
@@ -24,7 +24,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the Upstream components and resources';
+    protected $description = 'Install the Updraft components and resources';
 
     /**
      * Execute the console command.
