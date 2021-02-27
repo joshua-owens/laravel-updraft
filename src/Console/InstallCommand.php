@@ -24,7 +24,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the Jetstream components and resources';
+    protected $description = 'Install the Upstream components and resources';
 
     /**
      * Execute the console command.
