@@ -1,8 +1,12 @@
 import React from 'react';
+import { InertiaLink } from '@inertiajs/inertia-react';
 
-export default function Welcome(props) {
-    console.log({ props });
+export default function Welcome({ canLogin, canRegister, laravelVersion, phpVersion }) {
     return (
-        <div>Hello</div>
+        <div className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+            {canLogin && (
+                <div />
+            )}
+        </div>
     );
 }
