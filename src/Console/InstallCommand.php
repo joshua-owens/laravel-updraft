@@ -135,7 +135,7 @@ class InstallCommand extends Command
         (new Filesystem)->ensureDirectoryExists(app_path('Actions/Fortify'));
         (new Filesystem)->ensureDirectoryExists(app_path('Actions/Jetstream'));
         (new Filesystem)->ensureDirectoryExists(public_path('css'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('css'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('css/Pages'));
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Jetstream'));
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Layouts'));
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Pages'));
@@ -200,6 +200,8 @@ class InstallCommand extends Command
         // Assets...
         copy(__DIR__.'/../../stubs/public/css/app.css', public_path('css/app.css'));
         copy(__DIR__.'/../../stubs/resources/css/app.css', resource_path('css/app.css'));
+        copy(__DIR__.'/../../stubs/resources/css/Pages/Welcome.css', resource_path('css/Pages/Welcome.css'));
+        //
         copy(__DIR__.'/../../stubs/inertia/resources/js/app.js', resource_path('js/app.js'));
 
         // Flush node_modules...

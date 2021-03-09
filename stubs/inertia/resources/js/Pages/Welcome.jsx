@@ -1,42 +1,34 @@
 import React from 'react';
 import { InertiaLink } from '@inertiajs/inertia-react';
 
-function LinksWrapper({ children }) {
-    return (
-        <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-             {children}
-        </div>
-    );
-}
-
 function Links({ user, canRegister }) {
     if (user) {
         return (
-            <LinksWrapper>
-                <InertiaLink href="/dashboard" className="text-sm text-gray-700 underline">
-                    Dashboard
-                </InertiaLink>
-            </LinksWrapper>
+            <InertiaLink href="/dashboard" className="text-sm text-gray-700 underline">
+                Dashboard
+            </InertiaLink>
         );
     }
 
     return (
-        <LinksWrapper>
+        <>
             <InertiaLink href={route('login')} className="text-sm text-gray-700 underline">
                Login
             </InertiaLink>
             {canRegister && (<InertiaLink href={route('register')} className="ml-4 text-sm text-gray-700 underline">
                 Register
             </InertiaLink>)}
-        </LinksWrapper>
+        </>
     );
 }
 
 export default function Welcome({ canLogin, canRegister, laravelVersion, phpVersion, user }) {
     return (
-        <div className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        <div id="welcome" className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             {canLogin && (
-                <Links user={user} canRegister={canRegister} />
+                <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    <Links user={user} canRegister={canRegister} />
+                </div>
             )}
 
             <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
