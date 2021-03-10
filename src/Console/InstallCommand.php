@@ -116,6 +116,7 @@ class InstallCommand extends Command
                 'autoprefixer' => '^10.0.2',
                 'react' => '^17.0.1',
                 'react-dom' => '^17.0.1',
+                'nanoid' => '^3.1.20',
             ] + $packages;
         });
 
