@@ -82,7 +82,7 @@ export default function Register({ jetstream }) {
                     <InertiaLink href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
                         Already registered?
                     </InertiaLink>
-                    <Button className={processing ? 'opacity-25' : ''} disabled={processing}>
+                    <Button className={processing ? 'opacity-25 ml-4' : 'ml-4'} disabled={processing}>
                         Register
                     </Button>
                 </div>
