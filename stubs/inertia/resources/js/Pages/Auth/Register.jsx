@@ -5,6 +5,7 @@ import ValidationErrors from '@/Jetstream/ValidationErrors';
 import Input from '@/Jetstream/Input';
 import Label from '@/Jetstream/Label';
 import Checkbox from '@/Jetstream/Checkbox';
+import Button from '@/Jetstream/Button';
 
 export default function Register({ jetstream }) {
     const { hasTermsAndPrivacyPolicyFeature } = jetstream;
@@ -81,6 +82,9 @@ export default function Register({ jetstream }) {
                     <InertiaLink href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
                         Already registered?
                     </InertiaLink>
+                    <Button className={processing ? 'opacity-25' : ''} disabled={processing}>
+                        Register
+                    </Button>
                 </div>
             </form>
         </AuthenticationCard>
