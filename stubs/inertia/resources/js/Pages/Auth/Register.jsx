@@ -1,6 +1,7 @@
 import React from 'react';
 import { InertiaLink, useForm  } from '@inertiajs/inertia-react';
 import AuthenticationCard from '@/Jetstream/AuthenticationCard';
+import AuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo';
 import ValidationErrors from '@/Jetstream/ValidationErrors';
 import Input from '@/Jetstream/Input';
 import Label from '@/Jetstream/Label';
@@ -17,15 +18,15 @@ export default function Register({ jetstream }) {
         terms: false,
     });
 
-    function submit(e) {
-        e.preventDefault()
+    function submit(event) {
+        event.preventDefault()
         post(route('register'), {
             onFinish: () => reset('password', 'password_confirmation')
         });
     }
 
     return (
-        <AuthenticationCard>
+        <AuthenticationCard logo={<AuthenticationCardLogo />}>
             <ValidationErrors errors={errors} />
             <form onSubmit={submit}>
                 <div>
