@@ -21,8 +21,10 @@ export default function AppLayout({ children }) {
                         </div>
                     </div>
                 </nav>
+                <main>
+                    {children}
+                </main>
             </div>
-            {children}
         </div>
     );
 }
