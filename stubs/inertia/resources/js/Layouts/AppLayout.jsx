@@ -1,7 +1,7 @@
 import React from 'react';
+import { InertiaLink  } from '@inertiajs/inertia-react';
 import Banner from '@/Jetstream/Banner'
 import ApplicationMark from '@/Jetstream/ApplicationMark'
-import { InertiaLink  } from '@inertiajs/inertia-react';
 
 export default function AppLayout({ children, header }) {
     return (
