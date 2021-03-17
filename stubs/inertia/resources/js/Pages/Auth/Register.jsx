@@ -19,7 +19,7 @@ export default function Register({ jetstream }) {
     });
 
     function submit(event) {
-        event.preventDefault()
+        event.preventDefault();
         post(route('register'), {
             onFinish: () => reset('password', 'password_confirmation')
         });
@@ -74,7 +74,7 @@ export default function Register({ jetstream }) {
                                     onChange={e => setData('terms', e.target.value)} />
                             </div>
                             <div className="ml-2">
-                            I agree to the <a target="_blank" href={route('terms.show')} className="underline text-sm text-gray-600 hover:text-gray-900">Terms of Service</a> and <a target="_blank" href={route('policy.show')} className="underline text-sm text-gray-600 hover:text-gray-900">Privacy Policy</a>
+                                I agree to the <a target="_blank" href={route('terms.show')} className="underline text-sm text-gray-600 hover:text-gray-900">Terms of Service</a> and <a target="_blank" href={route('policy.show')} className="underline text-sm text-gray-600 hover:text-gray-900">Privacy Policy</a>
                             </div>
                         </Label>
                     </div>

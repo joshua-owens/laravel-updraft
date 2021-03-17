@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import PageContext from '@/Context/PageContext';
+import React, { useState } from 'react';
+import { usePage } from '@inertiajs/inertia-react'
 
 export default function Banner() {
     const [show, setShow] = useState(true);
-    const { jetstream } = useContext(PageContext);
+    const { jetstream } = usePage().props;
     const style = jetstream.flash?.bannerStyle || 'success';
     const message = jetstream.flash?.banner || '';
 
