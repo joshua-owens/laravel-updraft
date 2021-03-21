@@ -117,6 +117,7 @@ class InstallCommand extends Command
                 'react' => '^17.0.1',
                 'react-dom' => '^17.0.1',
                 'nanoid' => '^3.1.20',
+                'react-transition-group' => '4.4.1',
             ] + $packages;
         });
 
