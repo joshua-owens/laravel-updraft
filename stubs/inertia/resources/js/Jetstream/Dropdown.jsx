@@ -48,9 +48,9 @@ export default function Dropdown({ trigger, content, align = 'right', width = '4
 
             <div>
                 <CSSTransition
-                timeout={0}
-                in={open}
-                classNames={{
+                    timeout={0}
+                    in={open}
+                    classNames={{
                         enter: 'transition ease-out duration-200',
                         enterActive: 'transform opacity-0 scale-95',
                         enterDone: 'transform opacity-100 scale-100',
