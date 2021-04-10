@@ -121,6 +121,20 @@ export default function AppLayout({ children, header }) {
                                 Dashboard
                             </ResponsiveNavLink>
                         </div>
+
+                        {/* Responsive Settings Option */}
+                        <div className="pt-4 pb-1 border-t border-gray-200">
+                            <div className="flex items-center px-4">
+                                {jetstream.managesProfilePhotos && (<div className="flex-shrink-0 mr-3">
+                                    <img className="h-10 w-10 rounded-full object-cover" src={profile_photo_url} alt={user.name}  />
+                                </div>)}
+
+                                <div>
+                                    <div className="font-medium text-base text-gray-800">{user.name}</div>
+                                    <div className="font-medium text-sm text-gray-500">{user.email}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </nav>
 
