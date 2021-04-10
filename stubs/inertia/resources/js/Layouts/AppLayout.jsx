@@ -5,6 +5,7 @@ import ApplicationMark from '@/Jetstream/ApplicationMark'
 import NavLink from '@/Jetstream/NavLink';
 import Dropdown from '@/Jetstream/Dropdown';
 import DropdownLink from '@/Jetstream/DropdownLink';
+import ResponsiveNavLink from '@/Jetstream/ResponsiveNavLink';
 
 export default function AppLayout({ children, header }) {
     const { jetstream, profile_photo_url, user } = usePage().props;
@@ -112,7 +113,15 @@ export default function AppLayout({ children, header }) {
                             </div>
                         </div>
                     </div>
-                
+
+                    {/* Responsive Navigation Menu */}
+                    <div className={'sm:hidden ' + (showingNavigationDropdown ? 'block' : 'hidden')}>
+                        <div className="pt-2 pb-3 space-y-1">
+                            <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                Dashboard
+                            </ResponsiveNavLink>
+                        </div>
+                    </div>
                 </nav>
 
                 {header && (<header className="bg-white shadow">
