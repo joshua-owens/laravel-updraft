@@ -134,6 +134,25 @@ export default function AppLayout({ children, header }) {
                                     <div className="font-medium text-sm text-gray-500">{user.email}</div>
                                 </div>
                             </div>
+
+                            <div className="mt-3 space-y-1">
+                                <ResponsiveNavLink href={route('profile.show')} active={route().current('profile.show')}>
+                                    Profile
+                                </ResponsiveNavLink>
+
+                                {jetstream.hasApiFeatures && (
+                                    <ResponsiveNavLink href={route('api-tokens.index')} active={route().current('api-tokens.index')}>
+                                        API Tokens
+                                    </ResponsiveNavLink>
+                                )}
+
+                                {/* Authentication */}
+                                <form onSubmit={() => post(route('logout'))}>
+                                    <DropdownLink as="button">
+                                        Log Out
+                                    </DropdownLink>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </nav>
