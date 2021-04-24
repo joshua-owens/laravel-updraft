@@ -35,7 +35,9 @@ export default function Register({ jetstream }) {
                         className="mt-1 block w-full"
                         value={data.name}
                         onChange={e => setData('name', e.target.value)}
-                        required autoFocus autoComplete="name" />
+                        required
+                        autoFocus
+                        autoComplete="name" />
                 </div>
                 <div className="mt-4">
                     <Label htmlFor="email" value="Email" />
@@ -44,7 +46,8 @@ export default function Register({ jetstream }) {
                         className="mt-1 block w-full"
                         value={data.email}
                         onChange={e => setData('email', e.target.value)}
-                        required autoFocus />
+                        required
+                        autoFocus />
                 </div>
                 <div className="mt-4">
                     <Label htmlFor="password" value="Password" />
@@ -53,7 +56,9 @@ export default function Register({ jetstream }) {
                         className="mt-1 block w-full"
                         value={data.password}
                         onChange={e => setData('password', e.target.value)}
-                        required autoFocus autoComplete="new-password" />
+                        required
+                        autoFocus
+                        autoComplete="new-password" />
                 </div>
                 <div className="mt-4">
                     <Label htmlFor="password_confirmation" value="Confirm Password" />
@@ -62,7 +67,9 @@ export default function Register({ jetstream }) {
                         className="mt-1 block w-full"
                         value={data.password_confirmation}
                         onChange={e => setData('password_confirmation', e.target.value)}
-                        required autoFocus autoComplete="new-password" />
+                        required
+                        autoFocus
+                        autoComplete="new-password" />
                 </div>
                 {hasTermsAndPrivacyPolicyFeature && (
                     <div className="mt-4">

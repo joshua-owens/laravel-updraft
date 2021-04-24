@@ -22,7 +22,7 @@ function logout() {
 }
 
 export default function AppLayout({ children, header }) {
-    const { jetstream, profile_photo_url, user } = usePage().props;
+    const { jetstream, user } = usePage().props;
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
@@ -90,20 +90,23 @@ export default function AppLayout({ children, header }) {
                                                         Switch Teams
                                                     </div>
 
-                                                    {user.all_teams.map((team) => (
-                                                        <form onSubmit={() => switchTeam(team)} key={nanoid()}>
-                                                            <DropdownLink as="button">
-                                                                <div className="flex items-center">
-                                                                    {team.id === user.current_team_id && (
-                                                                        <svg className="mr-2 h-5 w-5 text-green-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                                        </svg>
-                                                                    )}
-                                                                    <div>{team.name}</div>
-                                                                </div>
-                                                            </DropdownLink>
-                                                        </form>
-                                                    ))}                                                    
+                                                    {Object.keys(user.all_teams).map((key) => {
+                                                        const team = user.all_teams[key];
+                                                        return (
+                                                            <form onSubmit={() => switchTeam(team)} key={nanoid()}>
+                                                                <DropdownLink as="button">
+                                                                    <div className="flex items-center">
+                                                                        {team.id === user.current_team_id && (
+                                                                            <svg className="mr-2 h-5 w-5 text-green-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                                            </svg>
+                                                                        )}
+                                                                        <div>{team.name}</div>
+                                                                    </div>
+                                                                </DropdownLink>
+                                                            </form>
+                                                        );
+                                                    })}                                                    
                                                 </div>
                                             )}
                                         />
@@ -120,7 +123,7 @@ export default function AppLayout({ children, header }) {
                                             <>
                                                 {jetstream.managesProfilePhotos && (
                                                     <button className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                                        <img className="h-8 w-8 rounded-full object-cover" src={profile_photo_url} alt={user.name} />
+                                                        <img className="h-8 w-8 rounded-full object-cover" src={user.profile_photo_url} alt={user.name} />
                                                     </button>
                                                 )}
 
@@ -194,7 +197,7 @@ export default function AppLayout({ children, header }) {
                         <div className="pt-4 pb-1 border-t border-gray-200">
                             <div className="flex items-center px-4">
                                 {jetstream.managesProfilePhotos && (<div className="flex-shrink-0 mr-3">
-                                    <img className="h-10 w-10 rounded-full object-cover" src={profile_photo_url} alt={user.name}  />
+                                    <img className="h-10 w-10 rounded-full object-cover" src={user.profile_photo_url} alt={user.name}  />
                                 </div>)}
 
                                 <div>
@@ -241,20 +244,23 @@ export default function AppLayout({ children, header }) {
                                             Switch Teams
                                         </div>
 
-                                        {user.all_teams.map((team) => (
-                                            <form onSubmit={() => switchTeam(team)} key={nanoid()}>
-                                                <ResponsiveNavLink as="button">
-                                                    <div className="flex items-center">
-                                                        {team.id === user.current_team_id && (
-                                                            <svg className="mr-2 h-5 w-5 text-green-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                            </svg>
-                                                        )}
-                                                        <div>{team.name}</div>
-                                                    </div>
-                                                </ResponsiveNavLink>
-                                            </form>
-                                        ))}                                                    
+                                        {Object.keys(user.all_teams).map((key) => {
+                                            const team = user.all_teams[key];
+                                            return (
+                                                <form onSubmit={() => switchTeam(team)} key={nanoid()}>
+                                                    <ResponsiveNavLink as="button">
+                                                        <div className="flex items-center">
+                                                            {team.id === user.current_team_id && (
+                                                                <svg className="mr-2 h-5 w-5 text-green-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                                </svg>
+                                                            )}
+                                                            <div>{team.name}</div>
+                                                        </div>
+                                                    </ResponsiveNavLink>
+                                                </form>
+                                            );
+                                        })}                                                    
                                     </>
                                 )}
                             </div>
