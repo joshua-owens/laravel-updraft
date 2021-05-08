@@ -12,12 +12,11 @@ export default function CreateTeamForm() {
         name: '',
     });
     return (
-        <FormSection 
+        <FormSection
             title="Team Details"
             description="Create a new team to collaborate with others on projects."
             submitted={(event) => {
                 event.preventDefault();
-                console.log('top')
                 post(route('teams.store'), {
                 errorBag: 'createTeam',
                 preserveScroll: true,
