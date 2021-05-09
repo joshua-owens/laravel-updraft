@@ -1,10 +1,10 @@
 import React from 'react';
 import { useForm, usePage } from '@inertiajs/inertia-react';
 import Button from '@/Jetstream/Button';
-import FormSection from '@/Jetstream/FormSection'
-import Input from '@/Jetstream/Input'
-import InputError from '@/Jetstream/InputError'
-import Label from '@/Jetstream/Label'
+import FormSection from '@/Jetstream/FormSection';
+import Input from '@/Jetstream/Input';
+import InputError from '@/Jetstream/InputError';
+import Label from '@/Jetstream/Label';
 
 export default function CreateTeamForm() {
     const { jetstream, user } = usePage().props;
@@ -18,13 +18,14 @@ export default function CreateTeamForm() {
             submitted={(event) => {
                 event.preventDefault();
                 post(route('teams.store'), {
-                errorBag: 'createTeam',
-                preserveScroll: true,
-            })}}
+                    errorBag: 'createTeam',
+                    preserveScroll: true,
+                })
+            }}
             form={(
                 <>
                     <div className="col-span-6">
-                        <Label value="Team Owne" />
+                        <Label value="Team Owner" />
 
                         <div className="flex items-center mt-2">
                             <img className="w-12 h-12 rounded-full object-cover" src={user.profile_photo_url} alt={user.name} />
@@ -38,7 +39,7 @@ export default function CreateTeamForm() {
 
                     <div className="col-span-6 sm:col-span-4">
                         <Label htmlFor="name" value="Team Name" />
-                        <Input id="name" type="text" className="mt-1 block w-full" autoFocus onChange={e => setData('name', e.target.value)} />
+                        <Input id="name" type="text" className="mt-1 block w-full" autoFocus onChange={(e) => setData('name', e.target.value)} />
                         <InputError className="mt-2" message={errors.name} />
                     </div>
                 </>
