@@ -2,6 +2,7 @@ import React from 'react';
 import AppLayout from '@/Layouts/AppLayout';
 import SectionBorder from '@/Jetstream/SectionBorder';
 import UpdateTeamNameForm from './UpdateTeamNameForm';
+import DeleteTeamForm from './DeleteTeamForm';
 
 export default function Show({ team, availableRoles, permissions }) {
     const showDeleteForm = permissions.canDeleteTeam && ! team.personal_team;
@@ -19,6 +20,7 @@ export default function Show({ team, availableRoles, permissions }) {
                 {showDeleteForm && (
                     <>
                         <SectionBorder />
+                        <DeleteTeamForm className="mt-10 sm:mt-0" team={team} />
                     </>
                 )}
             </div>
