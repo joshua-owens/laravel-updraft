@@ -17,10 +17,10 @@ export default function ConfirmationModal({ show = false, maxWidth = '2x1', clos
                         <h3 className="text-lg">
                             {title}
                         </h3>
-                    </div>
 
-                    <div className="mt-2">
-                        {content}
+                        <div className="mt-2">
+                            {content}
+                        </div>
                     </div>
                 </div>
             </div>
