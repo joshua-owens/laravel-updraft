@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Inertia } from '@inertiajs/inertia'
+import { useForm } from '@inertiajs/inertia-react';
 import ActionSection from '@/Jetstream/ActionSection';
 import DangerButton from '@/Jetstream/DangerButton';
 import ConfirmationModal from '@/Jetstream/ConfirmationModal';
@@ -31,9 +33,16 @@ export default function DeleteTeamForm({ className, team }) {
                         close={() => setConfirmingTeamDeletion(false)}
                         footer={(
                             <>
-                                <SecondaryButton>
+                                <SecondaryButton onClick={() => setConfirmingTeamDeletion(false)}>
                                     Cancel
                                 </SecondaryButton>
+                                <DangerButton className={'ml-2'} onClick={() => {
+                                    Inertia.delete(route('teams.destroy', team), {
+                                       errorBag: 'deleteTeam',
+                                    })
+                                }}>
+                                    Delete Team
+                                </DangerButton>
                             </>
                         )}
                     />
