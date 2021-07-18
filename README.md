@@ -20,17 +20,20 @@
 
 ## Introduction
 
-Laravel Jetstream is a beautifully designed application scaffolding for Laravel. Jetstream provides the perfect starting point for your next Laravel application and includes login, registration, email verification, two-factor authentication, session management, API support via [Laravel Sanctum](https://github.com/laravel/sanctum), and optional team management.
+Laravel Updraft is a fork of the beautifully designed application scaffolding package [Jetstream]() for Laravel. Updraft aims to bring first class support for those who prefer React over the Vue or Livewire.
+
+Jetstream provides the perfect starting point for your next Laravel application and includes login, registration, email verification, two-factor authentication, session management, API support via [Laravel Sanctum](https://github.com/laravel/sanctum), and optional team management.
+
 
 Jetstream is designed using [Tailwind CSS](https://tailwindcss.com) and offers your choice of [Livewire](https://jetstream.laravel.com/1.x/stacks/livewire.html) or [Inertia](https://jetstream.laravel.com/1.x/stacks/inertia.html) scaffolding.
 
-## Official Documentation
+## Documentation
 
-Documentation for Jetstream can be found on the [Jetstream website](https://jetstream.laravel.com).
+Updraft mirrors the Vue set up of the offical Jetstream package. The offical docs on the [Jetstream website](https://jetstream.laravel.com) can be used as a reference as there will be a direct mapping from a `.vue` file to a `.jsx` fie 
 
 ## Contributing
 
-Thank you for considering contributing to Jetstream! You can read the contribution guide [here](.github/CONTRIBUTING.md).
+Thank you for considering contributing to Upraft! You can read the contribution guide [here](.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
@@ -38,7 +41,7 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 ## Security Vulnerabilities
 
-Please review [our security policy](https://github.com/laravel/jetstream/security/policy) on how to report security vulnerabilities.
+Please review [laravel's security policy](https://github.com/laravel/jetstream/security/policy) on how to report backend security vulnerabilities.
 
 ## License
 
