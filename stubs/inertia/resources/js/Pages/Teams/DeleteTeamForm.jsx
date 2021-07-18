@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ActionSection from '@/Jetstream/ActionSection';
 import DangerButton from '@/Jetstream/DangerButton';
-import Modal from '@/Jetstream/Modal';
+import ConfirmationModal from '@/Jetstream/ConfirmationModal';
+import SecondaryButton from '@/Jetstream/SecondaryButton';
 
 export default function DeleteTeamForm({ className, team }) {
     const [confirmingTeamDeletion, setConfirmingTeamDeletion] = useState(false);
@@ -23,12 +24,19 @@ export default function DeleteTeamForm({ className, team }) {
                     </div>
 
                     {/* Delete Team Confirmation Modal */}
-                    <Modal show={confirmingTeamDeletion} close={(e) => {
-                        e.preventDefault();
-                        setConfirmingTeamDeletion(false);
-                    }}>
-                        test
-                    </Modal>
+                    <ConfirmationModal
+                        show={confirmingTeamDeletion}
+                        title="Delete Team"
+                        content="Are you sure you want to delete this team? Once a team is deleted, all of its resources and data will be permanently deleted."
+                        close={() => setConfirmingTeamDeletion(false)}
+                        footer={(
+                            <>
+                                <SecondaryButton>
+                                    Cancel
+                                </SecondaryButton>
+                            </>
+                        )}
+                    />
                 </>
             )}
         />

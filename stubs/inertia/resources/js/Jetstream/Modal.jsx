@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
-export default function Modal({ show = false, maxWidth = '2xl', closeable = true, close, children }) {
+export default function Modal({ show = false, maxWidth = '2xl', close, children }) {
     const styles = show ? { display: 'block' } : { display: 'none' };
 
     function maxWidthClass() {
@@ -25,7 +25,7 @@ export default function Modal({ show = false, maxWidth = '2xl', closeable = true
 
     useEffect(() => {
         function closeOnEscape (e) {
-            if (e.key === 'Escape' && props.show) {
+            if (e.key === 'Escape' && show) {
                 close()
             }
         }
